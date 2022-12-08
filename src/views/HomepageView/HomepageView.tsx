@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
+import { Typography } from "@mui/material";
 
 const HomepageView = (): JSX.Element => {
   return (
-    <div>
-      <h1>HomepageView</h1>
-    </div>
-  )
-}
+    <>
+      <Typography variant="h4" align="center" fontWeight={400}>
+        HomepageView
+      </Typography>
+    </>
+  );
+};
 
-export default HomepageView
+export default HomepageView;
