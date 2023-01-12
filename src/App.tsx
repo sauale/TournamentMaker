@@ -27,6 +27,8 @@ function App(): JSX.Element {
           },
           backgroundColors: {
             lightBlack: "#353535",
+            gray: "#545454",
+            lightGray: "#9c9c9c",
           },
           textColors: {
             white: "white",
@@ -39,8 +41,8 @@ function App(): JSX.Element {
   return (
     <ThemeProvider theme={theme}>
       <Box>
-        <Navbar />
         <Router>
+          <Navbar />
           <Routes>
             <Route path={URLMAP.HOME} element={<HomepageView />}></Route>
             <Route
