@@ -3,6 +3,7 @@ import {
   Avatar,
   Box,
   IconButton,
+  Link,
   Stack,
   Toolbar,
   Typography,
@@ -10,6 +11,7 @@ import {
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 
 import React from "react";
+import ButtonComponent from "../components/ButtonComponent";
 
 const Navbar = (): JSX.Element => {
   return (
@@ -23,6 +25,10 @@ const Navbar = (): JSX.Element => {
                 Tournament Creator
               </Typography>
             </Stack>
+
+            <Link href="/create-tournaments">
+              <ButtonComponent name="New Tournament" customStyle={{ ml: 3 }} />
+            </Link>
 
             <Box
               sx={{ display: "flex", justifyContent: "flex-end", flexGrow: 1 }}

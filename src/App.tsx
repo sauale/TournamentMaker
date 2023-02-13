@@ -7,6 +7,7 @@ import ManageTournamentsView from "./views/ManageTournamentsView/ManageTournamen
 import HomepageView from "./views/HomepageView/HomepageView";
 import { Box } from "@mui/material";
 import Navbar from "./shared/layouts/Navbar";
+import CreateTournamentsView from "./views/TournamentCreationView/CreateTournamentsView";
 declare module "@mui/material/styles" {
   // allow configuration using `createTheme`
   interface PaletteOptions {
@@ -48,6 +49,10 @@ function App(): JSX.Element {
             <Route
               path={URLMAP.MANAGE_TOURNAMENTS}
               element={<ManageTournamentsView />}
+            ></Route>
+            <Route
+              path={URLMAP.CREATE_TOURNAMENTS}
+              element={<CreateTournamentsView />}
             ></Route>
           </Routes>
         </Router>

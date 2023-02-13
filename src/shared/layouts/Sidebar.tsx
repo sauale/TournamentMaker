@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Typography } from "@mui/material";
 
 const SideBar = (): JSX.Element => {
   const classes = {
+    container: {
+      bgcolor: "backgroundColors.gray",
+      width: "35vh",
+      height: "100vh",
+      pt: "30px",
+      display: { xs: "none", sm: "inline" },
+    },
     filterButton: {
       "&:hover": {
         bgcolor: "backgroundColors.lightGray",
@@ -16,38 +23,50 @@ const SideBar = (): JSX.Element => {
       mb: 1,
     },
   };
+
+  const [selectedFilter, setSelectedFiler] =
+    useState<string>("All Tournaments");
+
+  console.log(selectedFilter);
+
   return (
     <>
-      <Box
-        sx={{
-          bgcolor: "backgroundColors.gray",
-          width: "35vh",
-          height: "100vh",
-          pt: "30px",
-          display: { xs: "none", sm: "inline" },
-        }}
-      >
+      <Box sx={classes.container}>
         <Box
           sx={{
             ...classes.filterButton,
           }}
         >
-          <Typography variant="h6" sx={classes.filterText}>
+          <Typography
+            variant="h6"
+            sx={classes.filterText}
+            onClick={() => {
+              setSelectedFiler("All Tournaments");
+            }}
+          >
             All Tournaments
           </Typography>
         </Box>
+
         <Box sx={classes.filterButton}>
-          <Typography variant="h6" sx={classes.filterText}>
-            Pending
-          </Typography>
-        </Box>
-        <Box sx={classes.filterButton}>
-          <Typography variant="h6" sx={classes.filterText}>
+          <Typography
+            variant="h6"
+            sx={classes.filterText}
+            onClick={() => {
+              setSelectedFiler("In Progress");
+            }}
+          >
             In Progress
           </Typography>
         </Box>
         <Box sx={classes.filterButton}>
-          <Typography variant="h6" sx={classes.filterText}>
+          <Typography
+            variant="h6"
+            sx={classes.filterText}
+            onClick={() => {
+              setSelectedFiler("Finished");
+            }}
+          >
             Finished
           </Typography>
         </Box>

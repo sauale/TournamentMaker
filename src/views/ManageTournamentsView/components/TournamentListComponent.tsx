@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import {
   Tournament,
@@ -10,7 +10,7 @@ const classes = {
   container: {
     m: 4,
     height: "100px",
-    justifyItems: "center",
+    alignItems: "center",
   },
 };
 
@@ -32,18 +32,29 @@ const mockData: Tournament[] = [
 const TournamentListComponent = (): JSX.Element => {
   return (
     <>
-      <Grid container gap={2} sx={classes.container}>
-        {mockData.map((element: Tournament, key) => {
-          return (
-            <Grid key={key}>
-              <TournamentCard
-                name={element.name}
-                status={element.status}
-              ></TournamentCard>
-            </Grid>
-          );
-        })}
-      </Grid>
+      <Box>
+        <Typography
+          variant="h4"
+          align="center"
+          sx={{ mt: 1, color: "backgroundColors.lightBlack" }}
+        >
+          {" "}
+          All Tournaments
+        </Typography>
+
+        <Grid container gap={2} sx={classes.container}>
+          {mockData.map((element: Tournament, key) => {
+            return (
+              <Grid key={key} gridArea={"main"}>
+                <TournamentCard
+                  name={element.name}
+                  status={element.status}
+                ></TournamentCard>
+              </Grid>
+            );
+          })}
+        </Grid>
+      </Box>
     </>
   );
 };

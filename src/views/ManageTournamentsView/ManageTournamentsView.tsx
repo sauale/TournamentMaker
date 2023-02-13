@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
 import React from "react";
 import SideBar from "../../shared/layouts/Sidebar";
+
 import TournamentListComponent from "./components/TournamentListComponent";
 
 const ManageTournamentsView = (): JSX.Element => {
